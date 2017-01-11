@@ -3,8 +3,7 @@
 all: client server
 
 client:
-	cd $@ ; yarn
-	cd $@ ; npm run build
+	make -C client
 
 server:
 	cd $@ ; yarn
