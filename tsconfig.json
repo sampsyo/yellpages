@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "outDir": "build",
+        "strictNullChecks": true,
+        "target": "es5",
+        "jsx": "react",
+        "sourceMap": true
+    },
+    "include": [
+        "src/**/*"
+    ]
+}
