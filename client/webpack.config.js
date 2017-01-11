@@ -1,5 +1,5 @@
 module.exports = {
-    entry: "./client.tsx",
+    entry: ['whatwg-fetch', "./client.tsx"],
     output: {
         filename: "bundle.js",
         path: "dist"
