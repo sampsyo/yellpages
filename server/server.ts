@@ -15,10 +15,6 @@ const router = new Router();
 const db = new LowDB(DB_NAME);
 db.defaults({ projects: [] });
 
-router.get('/', async (ctx, next) => {
-  ctx.body = 'hi!';
-});
-
 router.get('/data/projects/:id', async (ctx, next) => {
   let id = ctx.params['id'];
   let proj = db.get('projects').find({ id }).value();

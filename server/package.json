@@ -19,6 +19,7 @@
     "typescript": "^2.1.4"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "serve": "node build/server.js"
   }
 }
