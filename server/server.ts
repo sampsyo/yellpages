@@ -2,7 +2,7 @@ import * as Koa from 'koa';
 
 const app = new Koa();
 
-app.use(function* (ctx): Iterable<void> {
+app.use(async (ctx, next) => {
   ctx.body = 'hi!';
 });
 
