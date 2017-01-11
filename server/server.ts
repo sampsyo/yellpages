@@ -1,12 +1,14 @@
 import * as Koa from 'koa';
 import * as Router from 'koa-router';
-import * as LowDB from 'lowdb';
 import * as KoaJSON from 'koa-json';
+import * as KoaStatic from 'koa-static';
+import * as LowDB from 'lowdb';
 
 const DB_NAME = 'db.json';
 
 const app = new Koa();
 app.use(KoaJSON());
+app.use(KoaStatic('../client/dist'));
 
 const router = new Router();
 
