@@ -1,9 +1,9 @@
-import * as koa from 'koa';
+import * as Koa from 'koa';
 
-const app = koa();
+const app = new Koa();
 
-app.use(function *(): Iterable<void> {
-  this.body = 'Hi!';
+app.use(function* (ctx): Iterable<void> {
+  ctx.body = 'hi!';
 });
 
 app.listen(3000);

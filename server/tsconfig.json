@@ -3,7 +3,8 @@
         "noImplicitAny": true,
         "outDir": "build",
         "strictNullChecks": true,
-        "target": "es6"
+        "target": "es6",
+        "module": "commonjs"
     },
     "include": [
         "*.ts"
