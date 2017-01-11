@@ -1,11 +1,24 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-function Hello(props: { compiler: string; framework: string; }) {
-  return <h1>Hello from {props.compiler} and {props.framework}!</h1>;
+interface ProjectProps {
+  name: string;
+  contact: string;
+  description: string;
+}
+
+function Project(props: ProjectProps) {
+  return <div className="project">
+    <h3>{ props.name }</h3>
+    <address>{ props.contact }</address>
+    <div className="body">
+      { props.description }
+    </div>
+  </div>;
 }
 
 ReactDOM.render(
-    <Hello compiler="TypeScript" framework="React" />,
-    document.getElementById("example")
+  <Project name="project name here" contact="person to contact"
+    description="some body text" />,
+  document.getElementById("example")
 );
