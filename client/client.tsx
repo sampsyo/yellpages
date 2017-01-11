@@ -1,14 +1,14 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-interface ProjectProps {
+interface Project {
   id: string;
   name: string;
   contact: string;
   description: string;
 }
 
-function Project(props: ProjectProps) {
+function ProjectDetail(props: Project) {
   return <div className="project">
     <h3>{ props.name }</h3>
     <address>{ props.contact }</address>
@@ -18,15 +18,11 @@ function Project(props: ProjectProps) {
   </div>;
 }
 
-interface ProjectsState {
-  projects: ProjectProps[];
-}
-
-class Projects extends React.Component<{}, ProjectsState> {
+class ProjectList extends React.Component<{}, { projects: Project[] }> {
   render() {
     if (this.state && this.state.projects) {
       console.log("state is", this.state);
-      let projs = this.state.projects.map((props) => Project(props));
+      let projs = this.state.projects.map((props) => ProjectDetail(props));
       return <div>{ projs }</div>;
     } else {
       return <span>loading</span>;
@@ -41,6 +37,6 @@ class Projects extends React.Component<{}, ProjectsState> {
 }
 
 ReactDOM.render(
-  <Projects />,
+  <ProjectList />,
   document.getElementById("projects")
 );
