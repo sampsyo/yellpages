@@ -42,5 +42,5 @@ class Projects extends React.Component<{}, ProjectsState> {
 
 ReactDOM.render(
   <Projects />,
-  document.getElementById("example")
+  document.getElementById("projects")
 );
