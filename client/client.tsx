@@ -1,6 +1,3 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
-
 interface Project {
   id: string;
   name: string;

@@ -1,14 +1,15 @@
 .PHONY: all
-all: dist/bundle.js dist/react.js dist/react-dom.js dist/index.html
+all: build/client.js build/client.js.map build/react.js build/react-dom.js \
+	build/index.html
 
-dist/bundle.js: $(wildcard *.tsx) $(wildcard *.ts) webpack.config.js
+build/client.js: client.tsx
 	npm run build
 
-dist/react.js: ./node_modules/react/dist/react.min.js
+build/react.js: ./node_modules/react/dist/react.min.js
 	cp $< $@
 
-dist/react-dom.js: ./node_modules/react-dom/dist/react-dom.min.js
+build/react-dom.js: ./node_modules/react-dom/dist/react-dom.min.js
 	cp $< $@
 
-dist/index.html: index.html
+build/index.html: index.html
 	cp $< $@

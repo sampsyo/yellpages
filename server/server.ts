@@ -8,7 +8,7 @@ const DB_NAME = 'db.json';
 
 const app = new Koa();
 app.use(KoaJSON());
-app.use(KoaStatic('../client/dist'));
+app.use(KoaStatic('../client/build'));
 
 const router = new Router();
 
