@@ -11,4 +11,6 @@ router.get('/', async (ctx, next) => {
 app.use(router.routes());
 app.use(router.allowedMethods());
 
-app.listen(3000);
+let server = app.listen(3000, () => {
+  console.log('http://0.0.0.0:%d', server.address().port);
+});
