@@ -1,25 +1,27 @@
 import * as Koa from 'koa';
 import * as Router from 'koa-router';
 import * as LowDB from 'lowdb';
+import * as KoaJSON from 'koa-json';
 
 const DB_NAME = 'db.json';
 
 const app = new Koa();
-const router = new Router();
-const db = new LowDB(DB_NAME);
+app.use(KoaJSON());
 
+const router = new Router();
+
+const db = new LowDB(DB_NAME);
 db.defaults({ projects: [] });
 
 router.get('/', async (ctx, next) => {
   ctx.body = 'hi!';
-  console.log(db.get('projects').value());
 });
 
 router.get('/data/projects/:id', async (ctx, next) => {
   let id = ctx.params['id'];
   let proj = db.get('projects').find({ id }).value();
   if (proj) {
-    ctx.body = 'got a project';
+    ctx.body = proj;
   } else {
     ctx.throw('project not found', 404);
   }
